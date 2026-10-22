@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel · Victor Latif</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1F44">
+<link rel="icon" href="assets/marca.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/admin.css?v=20261022202341">
+</head>
+<body>
+
+<div id="faixa-demo" class="faixa-demo" hidden>
+  <b>Modo demonstração.</b> Pacientes, medidas e consultas de exemplo, marcados "(exemplo)", guardados só neste aparelho. Sem login.
+</div>
+
+<header class="adm-topo">
+  <div class="wrap adm-topo-in">
+    <a class="marca" href="index.html" title="Ver o site">
+      <img src="assets/marca.svg" alt="" width="44" height="44">
+      <span><b>Victor Latif</b><small>Painel do nutricionista</small></span>
+    </a>
+    <a class="btn btn-linha mini so-largo" href="index.html" target="_blank" rel="noopener">Ver o site</a>
+    <button class="btn btn-azul mini" id="btn-novo-lead" type="button">+ Lead</button>
+  </div>
+  <nav class="wrap adm-abas" role="tablist" aria-label="Seções do painel">
+    <button class="adm-aba" role="tab" data-aba="geral" aria-selected="true">Visão geral</button>
+    <button class="adm-aba" role="tab" data-aba="funil" aria-selected="false">Funil <span class="bolha" id="bolha-novos"></span></button>
+    <button class="adm-aba" role="tab" data-aba="pacientes" aria-selected="false">Pacientes</button>
+    <button class="adm-aba" role="tab" data-aba="agenda" aria-selected="false">Agenda</button>
+    <button class="adm-aba" role="tab" data-aba="retornos" aria-selected="false">Retornos <span class="bolha" id="bolha-ret"></span></button>
+    <button class="adm-aba" role="tab" data-aba="relatorio" aria-selected="false">Relatório</button>
+    <button class="adm-aba" role="tab" data-aba="ajustes" aria-selected="false">Ajustes</button>
+  </nav>
+</header>
+
+<main class="wrap adm-main">
+
+  <!-- VISÃO GERAL -->
+  <section class="adm-painel" data-painel="geral" data-ativa>
+    <h1 class="adm-tit" id="geral-tit">Hoje</h1>
+    <div class="kpis" id="kpis"></div>
+    <div class="cols">
+      <div class="bloco">
+        <div class="bloco-cab"><h2>Consultas de hoje</h2><button class="lnk" type="button" data-ir="agenda">Ver semana →</button></div>
+        <div id="lista-hoje"></div>
+      </div>
+      <div class="bloco">
+        <div class="bloco-cab"><h2>Leads novos</h2><button class="lnk" type="button" data-ir="funil">Ver funil →</button></div>
+        <div id="lista-novos"></div>
+      </div>
+      <div class="bloco">
+        <div class="bloco-cab"><h2>Retornos para chamar</h2><button class="lnk" type="button" data-ir="retornos">Ver todos →</button></div>
+        <div id="lista-ret-geral"></div>
+      </div>
+      <div class="bloco">
+        <div class="bloco-cab"><h2>Funil agora</h2></div>
+        <div id="mini-funil"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNIL -->
+  <section class="adm-painel" data-painel="funil">
+    <div class="adm-cab">
+      <h1 class="adm-tit">Funil de leads</h1>
+      <p class="adm-sub">Do primeiro contato ao paciente ativo. Cada etapa tem uma mensagem pronta de WhatsApp. Toque no card para abrir a ficha.</p>
+    </div>
+    <div class="etapas-nav" id="etapas-nav" role="tablist" aria-label="Etapas do funil"></div>
+    <div class="kanban" id="kanban"></div>
+  </section>
+
+  <!-- PACIENTES -->
+  <section class="adm-painel" data-painel="pacientes">
+    <div class="adm-cab">
+      <h1 class="adm-tit">Pacientes</h1>
+      <p class="adm-sub">Uma ficha por paciente: anamnese, evolução das medidas, plano, consultas e anotações.</p>
+    </div>
+    <div class="filtros">
+      <div class="campo busca"><label for="busca-pac">Buscar pelo nome</label><input id="busca-pac" type="search" placeholder="Ex: Juliana"></div>
+      <div class="seg" id="filtro-pac" role="group" aria-label="Filtro">
+        <button type="button" data-f="ativos" aria-pressed="true">Ativos</button>
+        <button type="button" data-f="todos" aria-pressed="false">Todos</button>
+        <button type="button" data-f="inativos" aria-pressed="false">Inativos</button>
+      </div>
+    </div>
+    <div class="lista-pac" id="lista-pac"></div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="adm-painel" data-painel="agenda">
+    <div class="adm-cab">
+      <h1 class="adm-tit">Agenda da semana</h1>
+      <div class="semana-nav">
+        <button class="btn btn-linha mini" id="sem-menos" type="button" aria-label="Semana anterior">←</button>
+        <b id="sem-titulo"></b>
+        <button class="btn btn-linha mini" id="sem-mais" type="button" aria-label="Próxima semana">→</button>
+        <button class="btn btn-linha mini" id="sem-hoje" type="button">Hoje</button>
+      </div>
+      <p class="legenda"><span class="lg lg-on"></span>On-line <span class="lg lg-pr"></span>Presencial <span class="lg lg-bl"></span>Bloqueio</p>
+    </div>
+    <div class="semana" id="semana"></div>
+
+    <div class="cols" style="margin-top:1.6rem">
+      <div class="bloco">
+        <div class="bloco-cab"><h2>Bloquear horário</h2></div>
+        <form id="form-bloqueio">
+          <div class="campos">
+            <div class="campos-2">
+              <div class="campo"><label for="bl-data">Dia</label><input id="bl-data" type="date" required></div>
+              <div class="campo"><label for="bl-tipo">Período</label>
+                <select id="bl-tipo"><option value="dia">Dia inteiro</option><option value="horas">Só algumas horas</option></select></div>
+            </div>
+            <div class="campos-2" id="bl-horas" hidden>
+              <div class="campo"><label for="bl-ini">De</label><input id="bl-ini" type="time" value="07:00"></div>
+              <div class="campo"><label for="bl-fim">Até</label><input id="bl-fim" type="time" value="09:00"></div>
+            </div>
+            <div class="campo"><label for="bl-motivo">Motivo</label><input id="bl-motivo" type="text" placeholder="Ex: congresso, treino, folga"></div>
+            <button class="btn btn-azul" type="submit">Bloquear na agenda</button>
+          </div>
+        </form>
+        <div id="msg-bloqueio"></div>
+      </div>
+      <div class="bloco">
+        <div class="bloco-cab"><h2>Bloqueios</h2></div>
+        <div id="lista-bloqueios"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETORNOS -->
+  <section class="adm-painel" data-painel="retornos">
+    <div class="adm-cab">
+      <h1 class="adm-tit">Retornos e follow-up</h1>
+      <p class="adm-sub">Quem está sem consulta há mais tempo do que o combinado. Um toque abre a mensagem pronta.</p>
+    </div>
+    <div class="filtros">
+      <div class="campo"><label for="ret-dias">Sem consulta há mais de</label>
+        <select id="ret-dias"><option value="15">15 dias</option><option value="25" selected>25 dias</option><option value="30">30 dias</option><option value="45">45 dias</option><option value="60">60 dias</option></select></div>
+    </div>
+    <div id="lista-ret"></div>
+    <div class="bloco" style="margin-top:1.4rem">
+      <div class="bloco-cab"><h2>Retornos já marcados</h2></div>
+      <div id="lista-ret-marcados"></div>
+    </div>
+  </section>
+
+  <!-- RELATÓRIO -->
+  <section class="adm-painel" data-painel="relatorio">
+    <div class="adm-cab">
+      <h1 class="adm-tit">Relatório do mês</h1>
+      <div class="semana-nav">
+        <button class="btn btn-linha mini" id="mes-menos" type="button" aria-label="Mês anterior">←</button>
+        <b id="mes-titulo"></b>
+        <button class="btn btn-linha mini" id="mes-mais" type="button" aria-label="Próximo mês">→</button>
+      </div>
+    </div>
+    <div class="kpis" id="rel-kpis"></div>
+    <div class="cols">
+      <div class="bloco"><div class="bloco-cab"><h2>Origem dos leads</h2></div><div id="rel-origem"></div></div>
+      <div class="bloco"><div class="bloco-cab"><h2>Consultas por modalidade</h2></div><div id="rel-mod"></div></div>
+      <div class="bloco"><div class="bloco-cab"><h2>Objetivos dos pacientes</h2></div><div id="rel-obj"></div></div>
+      <div class="bloco"><div class="bloco-cab"><h2>Faturamento estimado</h2></div><div id="rel-fat"></div></div>
+    </div>
+  </section>
+
+  <!-- AJUSTES -->
+  <section class="adm-painel" data-painel="ajustes">
+    <div class="adm-cab">
+      <h1 class="adm-tit">Ajustes</h1>
+      <p class="adm-sub">Valores da consulta (a confirmar com o Victor: nada vem preenchido) e intervalo padrão de retorno.</p>
+    </div>
+    <div class="bloco" style="max-width:640px">
+      <form id="form-ajustes">
+        <div class="campos">
+          <div class="campos-2">
+            <div class="campo"><label for="aj-primeira">Valor da 1ª consulta (R$)</label><input id="aj-primeira" type="text" inputmode="decimal" placeholder="a confirmar"></div>
+            <div class="campo"><label for="aj-retorno">Valor do retorno (R$)</label><input id="aj-retorno" type="text" inputmode="decimal" placeholder="a confirmar"></div>
+          </div>
+          <div class="campo"><label for="aj-dias">Retorno padrão a cada (dias)</label><input id="aj-dias" type="number" min="7" max="120"></div>
+          <button class="btn btn-azul" type="submit">Salvar</button>
+        </div>
+      </form>
+      <div id="msg-ajustes"></div>
+      <hr class="sep">
+      <p class="adm-sub">Voltar a demonstração ao estado inicial (apaga o que foi mexido neste aparelho).</p>
+      <button class="btn btn-linha" id="btn-zerar" type="button">Recomeçar a demonstração</button>
+    </div>
+  </section>
+</main>
+
+<!-- ficha do paciente -->
+<dialog class="gaveta" id="ficha" aria-labelledby="fc-nome">
+  <div class="gaveta-cab">
+    <div class="gc-txt">
+      <p class="gc-chips" id="fc-chips"></p>
+      <h2 id="fc-nome"></h2>
+    </div>
+    <button type="button" class="btn btn-linha mini" id="fc-fechar">Fechar</button>
+  </div>
+  <nav class="fc-abas" id="fc-abas" role="tablist" aria-label="Partes da ficha">
+    <button type="button" data-fa="resumo" aria-selected="true">Resumo</button>
+    <button type="button" data-fa="evolucao" aria-selected="false">Evolução</button>
+    <button type="button" data-fa="anamnese" aria-selected="false">Anamnese</button>
+    <button type="button" data-fa="plano" aria-selected="false">Plano</button>
+    <button type="button" data-fa="consultas" aria-selected="false">Consultas</button>
+    <button type="button" data-fa="notas" aria-selected="false">Anotações</button>
+  </nav>
+  <div class="gaveta-corpo" id="fc-corpo"></div>
+</dialog>
+
+<!-- mensagem pronta -->
+<dialog class="modal" id="dlg-msg" aria-labelledby="msg-tit">
+  <h2 id="msg-tit">Mensagem pronta</h2>
+  <p class="adm-sub" id="msg-para"></p>
+  <div class="campo"><label for="msg-txt">Texto (dá para editar)</label><textarea id="msg-txt" rows="7"></textarea></div>
+  <div class="acoes">
+    <a class="btn btn-zap" id="msg-zap" target="_blank" rel="noopener">Abrir no WhatsApp</a>
+    <button class="btn btn-linha" id="msg-copiar" type="button">Copiar</button>
+    <button class="btn btn-linha" id="msg-fechar" type="button">Fechar</button>
+  </div>
+  <p class="copiado" id="msg-ok" aria-live="polite"></p>
+</dialog>
+
+<!-- consulta (clique na agenda) -->
+<dialog class="modal" id="dlg-ag" aria-labelledby="ag-tit">
+  <h2 id="ag-tit"></h2>
+  <div id="ag-corpo"></div>
+  <div class="acoes" id="ag-acoes"></div>
+</dialog>
+
+<!-- novo lead -->
+<dialog class="modal" id="dlg-lead" aria-labelledby="lead-tit">
+  <h2 id="lead-tit">Novo lead</h2>
+  <form id="form-lead">
+    <div class="campos">
+      <div class="campo"><label for="ld-nome">Nome</label><input id="ld-nome" type="text" required></div>
+      <div class="campo"><label for="ld-tel">WhatsApp</label><input id="ld-tel" type="tel" inputmode="numeric" placeholder="(00) 9 0000-0000"></div>
+      <div class="campos-2">
+        <div class="campo"><label for="ld-origem">Origem</label><select id="ld-origem"></select></div>
+        <div class="campo"><label for="ld-obj">Objetivo</label><select id="ld-obj"></select></div>
+      </div>
+      <div class="campo"><label for="ld-nota">Anotação <small>(opcional)</small></label><input id="ld-nota" type="text" placeholder="Ex: chamou no Direct depois do reels"></div>
+    </div>
+    <div id="msg-lead"></div>
+    <div class="acoes">
+      <button class="btn btn-azul" type="submit">Adicionar ao funil</button>
+      <button class="btn btn-linha" type="button" id="lead-fechar">Cancelar</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="assets/config.js?v=20261022202341"></script>
+<script src="assets/demo.js?v=20261022202341"></script>
+<script src="assets/admin.js?v=20261022202341"></script>
+</body>
+</html>

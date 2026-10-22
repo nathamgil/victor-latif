@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victor Latif · Nutricionista Clínico & Esportivo</title>
+<meta name="description" content="Victor Latif, nutricionista clínico e esportivo. Mudando sua relação com a comida sem dieta sofrida e com resultado de verdade. Consulta on-line para todo o Brasil e presencial com hora marcada.">
+<meta name="theme-color" content="#0B1F44">
+<link rel="icon" href="assets/marca.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Victor Latif · Nutricionista Clínico & Esportivo">
+<meta property="og:description" content="Sem dieta sofrida, com resultado de verdade. Topa ser meu paciente?">
+<meta property="og:image" content="fotos/retrato.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css?v=20261022202341">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Victor Latif","jobTitle":"Nutricionista Clínico e Esportivo","sameAs":["https://www.instagram.com/victorlatif.oficial/","https://www.tiktok.com/@vlatifnutri"]}
+</script>
+</head>
+<body>
+
+<div id="faixa-demo" class="faixa-demo" hidden>
+  <b>Versão de demonstração.</b> O agendamento funciona de verdade, mas fica guardado só neste aparelho até ligarmos o banco de dados.
+</div>
+
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="marca" href="index.html" aria-label="Victor Latif, início">
+      <img src="assets/marca.svg" alt="" width="44" height="44">
+      <span><b>Victor Latif</b><small>Nutricionista Clínico & Esportivo</small></span>
+    </a>
+    <button class="btn-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Páginas">
+      <a href="index.html">Início</a>
+      <a href="consulta.html">A consulta</a>
+      <a href="especialidades.html">Especialidades</a>
+      <a href="index.html#meu-horario">Meu horário</a>
+      <a class="btn btn-azul mini" href="index.html#agendar">Marcar consulta</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= CAPA ================= -->
+<section class="capa">
+  <div class="wrap capa-in">
+    <div>
+      <p class="olho">Nutricionista Clínico &amp; Esportivo</p>
+      <h1>Sem dieta sofrida. <i>Com resultado de verdade.</i></h1>
+      <p class="lead">Nutrição <b>simples, direta e verdadeira</b>: não é só caloria, é comida que traz nutriente e saúde. Um plano que funciona na sua vida de verdade, com acompanhamento até o fim.</p>
+      <div class="acoes">
+        <a class="btn btn-lima" href="#agendar">Topa ser meu paciente?</a>
+        <a class="btn btn-linha" href="consulta.html">Como é a consulta</a>
+      </div>
+      <ul class="pilulas" aria-label="Formas de atendimento">
+        <li>On-line para todo o Brasil</li>
+        <li>Presencial com hora marcada</li>
+      </ul>
+    </div>
+    <div class="capa-foto">
+      <div class="moldura">
+        <img src="fotos/retrato.jpg" alt="Victor Latif, nutricionista" width="800" height="794">
+        <p class="nome-foto"><b>Victor Latif</b><span>Clínico &amp; Esportivo</span></p>
+      </div>
+      <div class="placa placa-ritmo"><b>2 kg/mês</b>= 24 kg no ano.<br>Sem efeito sanfona.</div>
+      <div class="placa placa-vaga" id="prox-vaga" hidden>
+        <span class="pv-rot">Próxima consulta on-line livre</span>
+        <b id="prox-quando"></b>
+        <button id="prox-reservar" type="button">Reservar esse horário →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-in" id="ticker"></div></div>
+
+<!-- ================= TOPA? ================= -->
+<section class="secao">
+  <div class="wrap">
+    <p class="olho">Antes de tudo</p>
+    <h2>Topa ser meu <i>paciente?</i></h2>
+    <p class="sub">Sem promessa milagrosa e sem regra absurda. O combinado é outro.</p>
+    <div class="topa">
+      <div class="topa-col topa-nao">
+        <h3>O que eu não sou</h3>
+        <ul>
+          <li><span>O nutricionista perfeito</span></li>
+          <li><span>Quem faz terrorismo alimentar</span></li>
+          <li><span>Quem passa as dietas mais absurdas do mundo</span></li>
+          <li><span>Mais um "começa na segunda"</span></li>
+        </ul>
+      </div>
+      <div class="topa-col topa-sim">
+        <h3>O que eu garanto</h3>
+        <ul>
+          <li>Ficar com você em todos os momentos do protocolo, sem desistências</li>
+          <li>Um plano que funciona na sua rotina, não no papel</li>
+          <li>Comida de verdade: equilíbrio, prazer e contexto estratégico</li>
+          <li>Espaço para o doce, sem culpa</li>
+        </ul>
+      </div>
+    </div>
+    <p class="citacao">Não é falta de força, não é falta de querer. É falta de um plano que funcione na sua vida de verdade.</p>
+    <p class="assina">Victor Latif</p>
+  </div>
+</section>
+
+<!-- ================= OBJETIVOS ================= -->
+<section class="secao secao-branca">
+  <div class="wrap">
+    <p class="olho">Por onde começar</p>
+    <h2>Qual é o seu <i>objetivo?</i></h2>
+    <p class="sub">Toque no que mais pesa hoje: o agendamento já abre com ele escolhido.</p>
+    <div class="objs-capa" id="objetivos-capa"></div>
+  </div>
+</section>
+
+<!-- ================= RITMO ================= -->
+<section class="secao escuro">
+  <div class="wrap ritmo">
+    <div>
+      <p class="olho">Sem pressa, sem sanfona</p>
+      <p class="ritmo-num"><span class="grande">2 kg</span><span class="peq">por mês NÃO é fracasso</span></p>
+      <p class="sub" style="margin-top:1.2rem">É a internet que vende resultado instantâneo e compara o seu processo com o print de alguém. Constância ganha de pressa.</p>
+    </div>
+    <div>
+      <div class="barras" id="barras" role="img" aria-label="Gráfico: 2 kg por mês somam 24 kg em 12 meses"></div>
+      <div class="barras-leg" id="barras-leg" aria-hidden="true"></div>
+      <p class="nota">Ilustração do raciocínio das legendas do Victor (2 kg × 12 meses). Cada corpo tem o seu ritmo: a meta real sai da consulta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESPECIALIDADES ================= -->
+<section class="secao">
+  <div class="wrap">
+    <div class="cab-secao">
+      <div>
+        <p class="olho">Especialidades</p>
+        <h2>Do consultório <i>à quadra</i></h2>
+      </div>
+      <a class="btn btn-linha mini" href="especialidades.html">Ver em detalhe</a>
+    </div>
+    <div class="grade-esp" id="grade-esp"></div>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="secao escuro">
+  <div class="wrap">
+    <div class="cab-secao">
+      <div>
+        <p class="olho">A consulta</p>
+        <h2>Quatro etapas, <i>um plano seu</i></h2>
+      </div>
+      <a class="btn btn-linha mini" href="consulta.html">Como funciona em detalhe</a>
+    </div>
+    <ol class="passos-consulta">
+      <li><h3>Anamnese</h3><p>Sua rotina, sono, treino, exames, histórico e o que você gosta de comer.</p></li>
+      <li><h3>Avaliação</h3><p>Antropometria: peso, circunferências e composição corporal.</p></li>
+      <li><h3>Plano alimentar</h3><p>Montado para a sua vida real, com trocas e espaço para o prazer.</p></li>
+      <li><h3>Acompanhamento</h3><p>Retornos para medir, ajustar e seguir junto. Sem desistências.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= VOCÊS ================= -->
+<section class="secao secao-branca">
+  <div class="wrap">
+    <p class="olho">Vocês 🔵</p>
+    <h2>Quem já é <i>paciente</i></h2>
+    <p class="sub">Pacientes que marcam o Victor no Instagram. Nada de depoimento inventado: só o que elas mesmas postaram.</p>
+    <div class="voces">
+      <div class="voce">
+        <span class="bola" aria-hidden="true">V</span>
+        <div><b>Victória Meirelles</b><div class="arroba">@vic_meirelles · out/2026</div></div>
+        <q>Mesmo look, outra disciplina.</q>
+        <a href="https://www.instagram.com/p/Dec_NSyt-Ep/" target="_blank" rel="noopener">Ver o antes e depois que ela postou →</a>
+      </div>
+      <div class="voce">
+        <span class="bola" aria-hidden="true">M</span>
+        <div><b>Maria Helena</b><div class="arroba">@nm_helena · out/2026</div></div>
+        <q>Agora eu tenho um nutri.</q>
+        <a href="https://www.instagram.com/reel/DeK_yWtTOF0/" target="_blank" rel="noopener">Ver o "tudo que eu como em um dia" →</a>
+      </div>
+      <div class="voce voce-fim">
+        <b>Destaque "Vocês 🔵"</b>
+        <p>Os retornos e resultados dos pacientes ficam reunidos no Instagram. Fotos e falas entram aqui só com autorização de cada um.</p>
+        <a class="btn btn-lima mini" href="https://www.instagram.com/victorlatif.oficial/" target="_blank" rel="noopener">Abrir o Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HIDRATAÇÃO ================= -->
+<section class="secao" id="agua">
+  <div class="wrap hidra">
+    <div>
+      <p class="olho">Ferramenta rápida</p>
+      <h2>Quanta água <i>você precisa?</i></h2>
+      <p class="sub">Retenção de líquidos começa a melhorar com escolhas simples, e a primeira é a água na medida certa. Faça a conta de referência.</p>
+    </div>
+    <div class="hidra-box">
+      <form id="form-agua" class="hidra-linha" novalidate>
+        <div class="campo"><label for="agua-peso">Seu peso (kg)</label><input id="agua-peso" type="number" inputmode="decimal" min="30" max="250" step="0.1" placeholder="Ex: 72"></div>
+        <button class="btn btn-azul" type="submit">Calcular</button>
+      </form>
+      <div class="hidra-res" id="agua-res" aria-live="polite">
+        <div class="garrafa" aria-hidden="true"><div class="agua" id="agua-nivel"></div></div>
+        <div>
+          <div class="hidra-num" id="agua-litros">— L</div>
+          <p class="hidra-det" id="agua-det">Digite o peso para ver a estimativa diária (35 ml por kg).</p>
+        </div>
+      </div>
+      <p class="aviso-fino"><b>Estimativa, não substitui consulta.</b> Treino, calor, gestação e algumas condições de saúde mudam essa conta. A meta certa para você sai da consulta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NO INSTAGRAM ================= -->
+<section class="secao secao-branca">
+  <div class="wrap">
+    <div class="cab-secao">
+      <div>
+        <p class="olho">No Instagram</p>
+        <h2>Conteúdo <i>sem terrorismo</i></h2>
+      </div>
+      <a class="btn btn-linha mini" href="https://www.instagram.com/victorlatif.oficial/" target="_blank" rel="noopener">@victorlatif.oficial</a>
+    </div>
+    <div class="conteudos">
+      <a class="cont" href="https://www.instagram.com/reel/Dd2HCqgvceT/" target="_blank" rel="noopener"><small>Quadro</small><b>Nutri testa</b><span>O Victor testa o lançamento e conta se muda alguma coisa.</span></a>
+      <a class="cont cont-foto" href="https://www.instagram.com/p/Dd4rOMCkcNM/" target="_blank" rel="noopener"><img src="fotos/prato.jpg" alt="" loading="lazy"><small>Emagrecimento</small><b>Trocas válidas</b><span>Comer mais volume sem extrapolar calorias.</span></a>
+      <a class="cont" href="https://www.instagram.com/p/DeP_lFLEWUf/" target="_blank" rel="noopener"><small>Dia a dia</small><b>Lanches rápidos</b><span>Três opções práticas com nutriente e saciedade.</span></a>
+      <a class="cont" href="https://www.instagram.com/p/DcCAmT_kcuP/" target="_blank" rel="noopener"><small>Sem culpa</small><b>Doce na dieta? Pode sim</b><span>O problema não é o doce: é desistir do plano por causa dele.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AGENDAR ================= -->
+<section class="secao" id="agendar">
+  <div class="wrap">
+    <p class="olho">Agendamento</p>
+    <h2>Marque sua <i>consulta</i></h2>
+    <p class="sub">Uns dois minutos, sem cadastro. Você escolhe on-line ou presencial, o objetivo e o horário. A confirmação vem pelo WhatsApp.</p>
+
+    <div class="painel" id="agendar-app">
+      <div class="passos" id="passos">
+        <div class="passo" data-estado="atual">Com quem</div>
+        <div class="passo" data-estado="aberto">1 · Consulta</div>
+        <div class="passo" data-estado="aberto">Sobre você</div>
+        <div class="passo" data-estado="aberto">2 · Dia e horário</div>
+        <div class="passo" data-estado="aberto">3 · Seus dados</div>
+      </div>
+      <div class="escolhas" id="escolhas" hidden></div>
+
+      <div class="etapa" data-etapa="1" data-ativa>
+        <h3>Com quem?</h3>
+        <div class="lista-barbeiros" id="lista-barbeiros"></div>
+      </div>
+
+      <div class="etapa" data-etapa="2">
+        <h3>Sua consulta</h3>
+        <p class="dica">Três toques: como, para quê e qual consulta.</p>
+        <div class="bloco-ag">
+          <span class="rotulo-campo">1. On-line ou presencial?</span>
+          <div class="mods" id="mod-cards" role="group" aria-label="Modalidade"></div>
+        </div>
+        <div class="bloco-ag" id="obj-box" hidden>
+          <span class="rotulo-campo">2. Qual é o seu objetivo?</span>
+          <div class="objs" id="obj-chips" role="group" aria-label="Objetivo"></div>
+        </div>
+        <div class="bloco-ag" id="trat-box" hidden>
+          <span class="rotulo-campo" id="trat-titulo">3. É a sua primeira consulta?</span>
+          <div id="lista-servicos"></div>
+        </div>
+        <div class="acoes"><button class="voltar" type="button" data-voltar="1">← Voltar</button></div>
+      </div>
+
+      <div class="etapa" data-etapa="3"></div>
+
+      <div class="etapa" data-etapa="4">
+        <h3>Dia e horário</h3>
+        <p class="dica" id="dica-dia">Escolha o dia na fita e depois o horário.</p>
+        <div class="fita" id="fita-dias"></div>
+        <p class="titulo-dia" id="titulo-dia"></p>
+        <div id="caixa-horas"></div>
+        <div class="acoes"><button class="voltar" type="button" data-voltar="2">← Trocar a consulta</button></div>
+      </div>
+
+      <div class="etapa" data-etapa="5">
+        <h3>Seus dados</h3>
+        <p class="dica">Para o Victor confirmar o horário e já chegar preparado na sua consulta.</p>
+        <div class="resumo" id="resumo"></div>
+        <form id="form-cliente" novalidate>
+          <div class="campos">
+            <div class="campos-2">
+              <div class="campo"><label for="cli-nome">Seu nome</label><input id="cli-nome" type="text" autocomplete="name" placeholder="Nome e sobrenome" required></div>
+              <div class="campo">
+                <label for="cli-tel">WhatsApp</label>
+                <input id="cli-tel" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 9 0000-0000" required>
+              </div>
+            </div>
+            <p class="ajuda" style="margin-top:-.6rem">O WhatsApp é só para confirmar a consulta. Não vai para lista de propaganda.</p>
+
+            <div class="anamnese" id="pre-anamnese">
+              <p class="anamnese-tit">Pré-anamnese rápida <small style="font-family:var(--corpo);font-size:.85rem;text-transform:none;font-weight:500;color:var(--tinta-2)">(tudo opcional)</small></p>
+              <div class="pergunta">
+                <span class="rotulo-campo">Pratica atividade física?</span>
+                <div class="chips" data-grupo="treino" data-rotulo="Atividade física"><button type="button" class="chip" aria-pressed="false">Não</button><button type="button" class="chip" aria-pressed="false">1 a 2x por semana</button><button type="button" class="chip" aria-pressed="false">3x ou mais</button></div>
+              </div>
+              <div class="pergunta">
+                <span class="rotulo-campo">Qual?</span>
+                <div class="chips" data-grupo="esporte" data-rotulo="Esporte" data-multi="1"><button type="button" class="chip" aria-pressed="false">Musculação</button><button type="button" class="chip" aria-pressed="false">Cross</button><button type="button" class="chip" aria-pressed="false">Futevôlei</button><button type="button" class="chip" aria-pressed="false">Corrida</button><button type="button" class="chip" aria-pressed="false">Outra</button></div>
+              </div>
+              <div class="pergunta">
+                <span class="rotulo-campo">Já fez dieta antes?</span>
+                <div class="chips" data-grupo="dieta" data-rotulo="Dieta antes"><button type="button" class="chip" aria-pressed="false">Nunca</button><button type="button" class="chip" aria-pressed="false">Já, e voltou tudo</button><button type="button" class="chip" aria-pressed="false">Já, e deu certo</button></div>
+              </div>
+              <div class="pergunta">
+                <span class="rotulo-campo">Tem alguma condição de saúde ou usa medicação?</span>
+                <div class="chips" data-grupo="saude" data-rotulo="Condição de saúde / medicação"><button type="button" class="chip" aria-pressed="false">Não</button><button type="button" class="chip" aria-pressed="false">Sim</button><button type="button" class="chip" aria-pressed="false">Prefiro falar na consulta</button></div>
+              </div>
+              <div class="campos-2">
+                <div class="campo"><label for="pa-peso">Peso aproximado <small>(kg)</small></label><input id="pa-peso" type="number" inputmode="decimal" min="30" max="250" step="0.1" placeholder="Ex: 78"></div>
+                <div class="campo"><label for="pa-altura">Altura <small>(cm)</small></label><input id="pa-altura" type="number" inputmode="numeric" min="120" max="220" placeholder="Ex: 170"></div>
+              </div>
+              <div class="campo">
+                <label for="cli-obs"><span id="cli-obs-rot">O que mais te atrapalha hoje?</span></label>
+                <textarea id="cli-obs" maxlength="400" placeholder="Ex: belisco à noite; treino de manhã e fico sem energia; já tentei várias dietas"></textarea>
+              </div>
+            </div>
+          </div>
+          <div id="msg-form"></div>
+          <div class="acoes">
+            <button class="btn btn-azul" id="btn-confirmar" type="submit">Confirmar consulta</button>
+            <button class="voltar" type="button" data-voltar="4">← Trocar o horário</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="etapa" data-etapa="6">
+        <div class="sucesso">
+          <div class="selo-ok" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>Consulta reservada</h3>
+          <p class="com">com <span id="ok-barbeiro"></span></p>
+          <p class="dica" id="ok-linha"></p>
+          <p class="rotulo-codigo">Seu código</p>
+          <div class="codigo" id="ok-codigo"></div>
+          <p class="expl">Horário guardado. Agora mande o resumo no WhatsApp do Victor para confirmar. Com o código você consulta ou cancela até 12 horas antes.</p>
+          <div class="acoes">
+            <a class="btn btn-zap" id="ok-zap" target="_blank" rel="noopener">Mandar no WhatsApp</a>
+            <button class="btn btn-linha" id="ok-copiar" type="button">Copiar resumo</button>
+            <a class="btn btn-linha" id="ok-ics">Salvar no calendário</a>
+            <button class="btn btn-linha" id="btn-novo" type="button">Marcar outra</button>
+          </div>
+          <p class="copiado" id="ok-copiado" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEU HORÁRIO ================= -->
+<section class="secao secao-branca" id="meu-horario">
+  <div class="wrap dupla">
+    <div>
+      <p class="olho">Já marcou?</p>
+      <h2>Consultar ou <i>cancelar</i></h2>
+      <p class="sub">Imprevisto acontece. Cancele por aqui e o horário volta para a agenda. Vale até <b>12 horas antes</b>; depois disso, chame o Victor no WhatsApp.</p>
+    </div>
+    <div class="cartao">
+      <form id="form-consulta">
+        <div class="campos">
+          <div class="campo"><label for="con-codigo">Código</label><input id="con-codigo" type="text" placeholder="Ex: A3F91C" style="text-transform:uppercase" required></div>
+          <div class="campo"><label for="con-tel">WhatsApp usado</label><input id="con-tel" type="tel" inputmode="numeric" placeholder="(00) 9 0000-0000" required></div>
+          <button class="btn btn-azul btn-bloco" type="submit">Buscar minha consulta</button>
+        </div>
+      </form>
+      <div id="saida-consulta"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="secao escuro" id="contato">
+  <div class="wrap contato">
+    <div>
+      <p class="olho">Contato</p>
+      <h2>On-line para o Brasil, <i>presencial com hora marcada</i></h2>
+      <div class="info-linhas">
+        <div><b>Consultório</b><span>Atendimento presencial com hora marcada <small>(endereço a confirmar)</small></span></div>
+        <div><b>On-line</b><span>Por vídeo, para todo o Brasil</span></div>
+        <div><b>Redes</b><span id="outros-perfis"></span></div>
+      </div>
+      <div class="acoes">
+        <a class="btn btn-zap" data-zap href="https://wa.me/message/JOFDRP4GDZAZM1" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a class="btn btn-lima" href="#agendar">Marcar consulta</a>
+      </div>
+    </div>
+    <figure class="foto-cons">
+      <img src="fotos/consultorio.jpg" alt="Victor Latif no consultório" loading="lazy" width="840" height="800">
+      <figcaption>O consultório (foto do Instagram do Victor)</figcaption>
+    </figure>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-in">
+      <div>
+        <a class="marca" href="index.html"><img src="assets/marca.svg" alt="" width="44" height="44"><span><b>Victor Latif</b><small>Nutricionista Clínico & Esportivo</small></span></a>
+        <p>Mudando sua relação com a comida sem dieta sofrida e com resultado de verdade.</p>
+      </div>
+      <div>
+        <b class="rodape-titulo">Páginas</b>
+        <ul class="rodape-links">
+          <li><a href="consulta.html">Como é a consulta</a></li>
+          <li><a href="especialidades.html">Especialidades</a></li>
+          <li><a href="index.html#agendar">Marcar consulta</a></li>
+          <li><a href="index.html#meu-horario">Consultar ou cancelar</a></li>
+        </ul>
+      </div>
+      <div>
+        <b class="rodape-titulo">Contato</b>
+        <ul class="rodape-links">
+          <li><a data-zap href="https://wa.me/message/JOFDRP4GDZAZM1" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/victorlatif.oficial/" target="_blank" rel="noopener">@victorlatif.oficial</a></li>
+          <li><a href="admin.html">Área do nutricionista</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="creditos">
+      <span>© <span class="ano"></span> Victor Latif · Nutricionista</span>
+      <span>Guardamos nome, WhatsApp e as respostas da pré-anamnese só para organizar a consulta. Para apagar seus dados, é só pedir no WhatsApp.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="flutua btn btn-azul" href="#agendar">Marcar consulta</a>
+
+<script src="assets/config.js?v=20261022202341"></script>
+<script src="assets/demo.js?v=20261022202341"></script>
+<script src="assets/site.js?v=20261022202341"></script>
+<script src="assets/agendamento.js?v=20261022202341"></script>
+<script src="assets/agenda.js?v=20261022202341"></script>
+</body>
+</html>
